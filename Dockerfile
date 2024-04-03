@@ -13,3 +13,6 @@ FROM gcr.io/distroless/base
 COPY --from=app /yopass/yopass /yopass/yopass-server /
 COPY --from=website /website/build /public
 ENTRYPOINT ["/yopass-server"]
+
+FROM docker.io/jhaals/yopass:11.15.0
+COPY website/public/locales/de.json /public/locales/
